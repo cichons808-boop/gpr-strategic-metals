@@ -1,0 +1,35 @@
+\subsection{Geopolitical Risk and Rare-Earth-Related Equity Funds}
+We examine whether changes in the news-based Geopolitical Risk (GPR) index of
+\citet{caldara_iacoviello_2022} are associated with the monthly returns of
+rare-earth-related exchange-traded funds. Our principal asset is the VanEck Rare
+Earth and Strategic Metals ETF (REMX). Other strategic-materials ETFs are used
+as shorter-history comparison funds; the market and metals/mining proxies are
+SPY and XME, respectively. We use monthly USD adjusted ETF close prices and
+match them to the official monthly GPR series.
+
+For ETF $i$, define the log return
+$r_{i,t}=100[\log(P_{i,t})-\log(P_{i,t-1})]$ and a standardized GPR change
+$z_t=\Delta\log(1+\mathrm{GPR}_t)/\widehat{\sigma}_{\Delta\log(1+\mathrm{GPR})}$.
+The baseline contemporaneous specification is
+\begin{equation}
+ r_{i,t}=\alpha_i+\beta_i z_t+\gamma_i r_{\mathrm{SPY},t}
+ +\delta_i r_{\mathrm{XME},t}+\varepsilon_{i,t}.
+\end{equation}
+To examine predictive content, rather than same-period association, we estimate
+\begin{equation}
+ r_{i,t+1}=a_i+\theta_i z_t+\lambda_i r_{i,t}
+ +\mu_i r_{\mathrm{SPY},t}+\nu_i r_{\mathrm{XME},t}+u_{i,t+1}.
+\end{equation}
+Both regressions use heteroskedasticity and autocorrelation-consistent
+(Newey--West) standard errors with three monthly lags. We report the
+conditional mean returns during top-decile increases in the GPR index and
+cumulative returns over the subsequent one- and three-month horizons, enforcing
+nonoverlapping event windows. These regressions describe statistical
+associations and predictive relationships, not causally identified effects.
+
+\paragraph{Limitations.} Rare-earth ETFs hold equities exposed to a wider set
+of materials, not spot rare-earth commodities. In addition, the Global X fund
+changed its investment strategy and ticker (DMAT to EART) in March 2026;
+returns through March 2026 are excluded from our EART subsample. The recent
+inception of several relevant ETFs limits statistical power. Monthly index
+publication delays and revisions preclude unqualified real-time trading claims.

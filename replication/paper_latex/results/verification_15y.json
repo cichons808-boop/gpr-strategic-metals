@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Raw prices and all six signals reconcile for 190 monthly decisions, with prior-month information and a threshold calibrated before 2011.",
+    "All 25 main portfolio paths match an independent day-by-day accounting loop, including calendar-day interest, costs, final liquidation, CAGR and drawdowns; every path spans over fifteen years.",
+    "Five long IMF metal samples now cover 2011\u20132026; shorter benchmarks remain explicitly dated; all 56 extended regressions are retained.",
+    "Genuine XeLaTeX PDF: 20 pages, eight vector figures, six tables, 23 references and resolved cross-references; no overfull boxes or missing glyphs."
+  ],
+  "pages": 20,
+  "words": 9647,
+  "sample_start": "2011-01-10",
+  "sample_end": "2026-10-30",
+  "sha256": {
+    "paper_latex/main.tex": "c6130bf2be9a825c08a73c8161400c49609de78b9080317f426d9c241f5fa740",
+    "data/gpr.xls": "32e54b08df4cbc2954c3b89970008a7a3a2f2e94ed4184135908248e4d01cd83",
+    "data/imf.xlsx": "e0bc0cbbd08208e9868fb16e21992ff4b86a7676a2b5f64d32a02bdb8bdcc464",
+    "paper_latex/results/strategy_metrics_15y.csv": "68cb1e3f25477bb5addbda53551eebe3ed462a351adedfaa24480607ddaf8e54",
+    "paper_latex/results/monthly_mean_models.csv": "cf1642bcfa90a77f292f7da34e5e80f3dc8356d5c8539815fed9b1556ca80635"
+  },
+  "final_document": {
+    "pages": 20,
+    "figures": 8,
+    "tables": 6,
+    "references": 23,
+    "engine": "XeLaTeX",
+    "producer": "xdvipdfmx (20240305)",
+    "visual_review": "All twenty final pages rendered and inspected."
+  }
+}

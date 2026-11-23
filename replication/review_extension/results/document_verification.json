@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "pages": 20,
+  "words": 9185,
+  "figures": 9,
+  "tables": 8,
+  "references": 32,
+  "producer": "xdvipdfmx (20240305)",
+  "pdf_sha256": "6d16b6c876321adaa40bf6b1c75e9dc949c83b2fb294ff354f3440c6722d24d3",
+  "visual_review": "All 20 pages rendered and inspected; revised wealth axes and alpha legend re-inspected after final typesetting.",
+  "source_sha256": {
+    "paper_revision/01_introduction.tex": "0d0858dbfccef20fcfbff92d2d291a72b7503596960c3a64508fa12b29cb284a",
+    "paper_revision/02_data_methods.tex": "9c44e97c50290cd067239595ba75930f6876c2c3f9c2412af6eec4de97b70233",
+    "paper_revision/03_price_results.tex": "3f162cc3538badc1ca78ca2a4915386a0666d4b0b3230184a6a47c8826c264b6",
+    "paper_revision/04_investment_results.tex": "1fb2cc52f783c0bb3864604bfbc53ec01d5c2d9f3b6c994ed9924198c0c5b967",
+    "paper_revision/05_vintages_conclusion.tex": "32c9dec63495c88799330f623ea3b238d2d16cbf0a44577d8bd3714930b313d6",
+    "paper_revision/extra_references.tex": "6a9c150074a0a25795eead483d1054f2a15d0774c00bdcc987a6c292996d514d",
+    "paper_revision/main.tex": "07ede170001ec2834b4d2e4247d34610b65644c4eeaf690ab8fd97bad2029877",
+    "paper_revision/numbers.tex": "0a2b00426b135d34e0186cf7a4765580227ec16fbed5819c3b0a3f4843a1d121",
+    "paper_revision/preamble.tex": "a618229d2ec7e17d04f351c67dbf4e5cd4d360ffdf2cdc65d3a6ddcb234c29b9",
+    "paper_revision/references.tex": "8dec78ac489637d0bc8305742976b155b6e77c677205061863f4a7b049885c97",
+    "paper_revision/references_base.tex": "14ae5a83623092055cd22812de5502a924dca9e116708863dbf1d28ab1957e65"
+  }
+}

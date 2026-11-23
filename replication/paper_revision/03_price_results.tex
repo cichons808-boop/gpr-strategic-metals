@@ -1,0 +1,32 @@
+\section{Price evidence after economic controls}
+
+The selected original PrNd model contains 191 observations, including 63 months following elevated risk. Its high-state slope is 3.004 log-return percentage points per standard deviation, with nominal $p=0.019$. The lower-state slope is 0.160 and is estimated imprecisely. The estimated difference is 2.844, with nominal $p=0.044$. Three log-return percentage points correspond to a simple price change of approximately $100[\exp(3.004/100)-1]=3.05\%$ for that marginal shift, holding the other terms fixed.
+
+Table~\ref{tab:controls} shows that adding lagged economic controls leaves the high-state estimate almost unchanged at 3.001, with nominal $p=0.023$. The same-month-control version gives 2.790, with $p=0.041$. These comparisons weaken a simple explanation based only on the included business-cycle, dollar and commodity variables. They do not eliminate all omitted influences or identify an exogenous geopolitical effect. The difference between the high- and lower-state slopes is also less precise after controls: its $p$-value is 0.053 with lagged controls and 0.080 with current controls.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{PrNd high-state associations with economic controls}
+\label{tab:controls}
+\setlength{\tabcolsep}{4pt}
+\input{tables/controlled_prices.tex}
+\tabnote{The risk scaling and prior-state threshold are held fixed across these comparisons. The first three rows use 191 observations. The industrial-production (IP) rows use the same 152 complete dates. The last column tests the difference from the lower-state slope. Nominal HAC inference is conditional on the specification; coefficients are log-return percentage points per standard deviation of the risk change.}
+\end{table}
+
+The industrial-production check illustrates why matched samples are necessary. With lagged IP and the other economic controls, the high-state estimate is 5.347. The original model on those same dates gives 5.198. Much of the increase from the full-sample 3.004 therefore reflects which observations remain, rather than an effect created by adding industrial production. The IP series has not been extended beyond its genuine coverage or interpolated across missing months.
+
+\fig{02_price_controls}{High-state PrNd coefficients and pointwise 95\% HAC intervals. The original and lagged-control full-sample estimates are nearly identical. The two industrial-production comparisons use a common shorter sample and should be compared with each other. Positive conditional price associations do not establish an identified causal mechanism.}{fig:controls}
+
+Other earlier checks remain informative. Deleting individual calendar years leaves the selected high-state slope positive, between about 2.12 and 3.64. Six- and twelve-month-block bootstrap intervals are positive for the high-state slope, while evidence for the difference between states is less uniform. An alternative calibration fixed entirely from 2000–2009 gives a high-state slope of 1.111, with nominal $p=0.074$, and $p=0.461$ for the state difference. That alternative changes both the standardisation and the number of months classified as high risk. The current controls do not resolve this dependence on the definition of the state.
+
+The broader specification search also limits discovery claims. The original archive retains 256 linear specifications, 30 quantile specifications, ten state specifications and twelve daily comparisons, together with later and earlier subsamples. A simple ten-high-slope Bonferroni correction changes the selected model's 0.019 nominal $p$-value to about 0.193. The new economic controls test the robustness of that selected association; they do not provide a separate, previously untouched confirmation.
+
+\subsection{When the conditional response occurs}
+
+The controlled local projections provide their clearest evidence at the current month. On the common 177-date sample, the high-state $h=0$ estimate is 3.118, with a pointwise interval of approximately $[0.201,6.036]$. It differs slightly from Table~\ref{tab:controls} because the dynamic regression includes additional return and risk lags and uses common dates suitable for every horizon.
+
+At one further month, the cumulative estimate is 2.744, with an interval of about $[-3.304,8.793]$. At six months it is 1.354, with $[-5.717,8.425]$, and at twelve months it is 0.299, with $[-7.582,8.180]$. The point estimates fade, but the wider intervals do not establish a precisely measured reversal or zero long-run effect. They show that these observations provide substantially less information about a persistent response than about the current-month association.
+
+\fig{03_local_projections}{Controlled cumulative PrNd associations after a risk change in the high prior-risk state. Each point is estimated in a separate local projection using the same 177 dates, three return lags, three risk-change lags and lagged economic controls. The shaded region gives pointwise 95\% HAC intervals; it is not a simultaneous confidence band. The measured change is not an externally identified shock.}{fig:lp}
+
+The economic implication is important for the investment test. A quote can move while geopolitical news is arriving during the month. Someone acting on the completed monthly index then faces a later return, in a different traded vehicle. A substantial current-month coefficient is therefore compatible with limited subsequent forecasting value. The wider material comparison also remains heterogeneous: the original extended mean-return screen finds no common significant lagged-risk relation across the material universe. Absolute-return and quantile results describe different parts of the distribution and are not treated as automatic buy signals \citep{koenker1978}.

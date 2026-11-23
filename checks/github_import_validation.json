@@ -1,0 +1,154 @@
+{
+  "validated_at": "2026-11-23T09:07:02.916724+00:00",
+  "source_files_checked": 951,
+  "source_integrity": "PASS",
+  "python_syntax_files_checked": 74,
+  "python_syntax": "PASS",
+  "main_check_command": "python run.py --check",
+  "main_checks_status": "PASS",
+  "main_checks": [
+    "Raw adjusted prices, all 104 post-2018 decisions and all 56 archived decisions match their source values, fixed calibrations and execution calendars.",
+    "All 88 main portfolio paths match an independent loop from raw prices, derived benchmark weights, calendar cash, turnover costs, liquidation, CAGR and drawdowns.",
+    "Forecast training targets strictly precede execution; first and last predictions in both samples reproduce from independent normal-equation refits, using each archived risk history where required.",
+    "Price slopes and calendar-aware HAC errors reproduce independently, including actual IP gaps; every local-projection target matches the raw cumulative quote change on 177 common dates.",
+    "Six-factor intercepts, nested forecast error ratios and the exact two-decision wealth attribution reconcile; factor attribution includes the opening cost on its first holding interval."
+  ],
+  "validation_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "statsmodels": "0.14.6",
+    "openpyxl": "3.1.5",
+    "xlrd": "2.0.2"
+  },
+  "saved_source_files_preserved": true,
+  "full_model_search_rerun": false,
+  "new_research_data_downloaded": false,
+  "source_packages": [
+    {
+      "name": "gpr-strategic-metals-data-models.zip",
+      "size_bytes": 32674888,
+      "sha256": "51704fb294c4abba9beda1092b5cc6b3dfe6154e2957ec584c1e8badd9e18d85"
+    },
+    {
+      "name": "GPR_Rare_Earths_Replication_EN.zip",
+      "size_bytes": 33993288,
+      "sha256": "6dd706de61fc5357a73e359a25b5df9332a2a4233925512741517e8032899b03"
+    },
+    {
+      "name": "GPR_Rare_Earths_LaTeX_Source.zip",
+      "size_bytes": 217805,
+      "sha256": "ba6ae4ef6558e0fa67d00399811066c1da01d6c3991e8ce24c294733377ca8bd"
+    },
+    {
+      "name": "REE_GPR_ETF.zip",
+      "size_bytes": 13327,
+      "sha256": "c178928dc82ef70a46f56f72b26ed836062b680a399947ddba18fedd902e6696"
+    },
+    {
+      "name": "REE_GPR_ETF_VAR.zip",
+      "size_bytes": 23365,
+      "sha256": "b3c7de8d14aad214674fdb02abd173b4ac6617d4ab7a1a7bad1f4391bfcbbd2b"
+    },
+    {
+      "name": "REE_GPR_ETF_TRADING.zip",
+      "size_bytes": 35004,
+      "sha256": "08b00ff55ef1e2b37d8968ca5c19fdc0ad8de7f7429e17f337c48faaac10fffb"
+    },
+    {
+      "name": "REE_GPR_SIGN_STRATEGY.zip",
+      "size_bytes": 10146,
+      "sha256": "a0856dd0b4c740ebd595b6e194925b4708011eb8d74afde1672da53debf9a15a"
+    },
+    {
+      "name": "REE_GPR_MA200.zip",
+      "size_bytes": 11455,
+      "sha256": "e81faa19b13c8a311cb8fbc8581ac140f937cb43f43bdbb7a91eedd4d0b29daa"
+    },
+    {
+      "name": "SPY_GPR_EXCESS.zip",
+      "size_bytes": 11463,
+      "sha256": "491a9789312cf72b30ca27a9b3bd7506583bee7806cd5436de13bfb8cf367f52"
+    },
+    {
+      "name": "SPY_GPR_EXCESS_FIX.zip",
+      "size_bytes": 9313,
+      "sha256": "89ef9fbfb166438bd937cca5715213632fb8fb7053f8487731d9761c6fd7e630"
+    },
+    {
+      "name": "ETF_GPR_FORECAST.zip",
+      "size_bytes": 21163,
+      "sha256": "7ab2bd5dd0f10fb040689027b7640828267939c34c3a652fb0f20a048e15eb43"
+    },
+    {
+      "name": "GPR_surowce_strategiczne_praca-2.pdf",
+      "size_bytes": 1146884,
+      "sha256": "26b08a060dc9462dd8b297307cf505e7fbad9b57d80922ee5ba8e574f334f50f"
+    },
+    {
+      "name": "GPR_Rare_Earths_Research_Article_EN.pdf",
+      "size_bytes": 394826,
+      "sha256": "a6251d0f950cdd7940fb98e9fd10b8874e8d97f78be2a6842bdca74dd3fd483c"
+    },
+    {
+      "name": "GPR_Rare_Earths_Research_Article_EN(1).pdf",
+      "size_bytes": 489161,
+      "sha256": "35fa8926ac89085e23a14af4355e35745365d471214c6e1082a7ce9b4234b53d"
+    },
+    {
+      "name": "ree_gpr.py",
+      "size_bytes": 20019,
+      "sha256": "fafc79447a94beffa583cf820601e1c50507143e1e81437b5bf8729c479ab6c2"
+    },
+    {
+      "name": "ree_var.py",
+      "size_bytes": 17444,
+      "sha256": "92298f232b0bf082d95ea2bf850e96a57689c7c14504b41bb22433cd750a21aa"
+    },
+    {
+      "name": "ree_trading.py",
+      "size_bytes": 18552,
+      "sha256": "008bb8d09922210b60bfe1b1ccdf73fe30161e0e5bd2dcd62fbdd7102fadb21f"
+    },
+    {
+      "name": "spy_gpr_excess.py",
+      "size_bytes": 17436,
+      "sha256": "18e60a250638501d5c69d7e4acab6b2e59ec57aaa5cab0b33a3b642f78e37d2e"
+    },
+    {
+      "name": "etf_gpr_forecast.py",
+      "size_bytes": 24376,
+      "sha256": "e077bfc25fc60a83aa2cc0c44be75e9dc0a6b0905810dcce111665e2c02eb718"
+    },
+    {
+      "name": "README_SPY_GPR.md",
+      "size_bytes": 5473,
+      "sha256": "467d25fc392fbc469fdcc3825c7153269b08ccf560ce05024fad8eaf33163750"
+    },
+    {
+      "name": "README_ETF_GPR_FORECAST.md",
+      "size_bytes": 6067,
+      "sha256": "b7db36e275675d95f740f9d7650d590d55864131fd7952115c7cc9db8bf92a09"
+    }
+  ],
+  "original_replication_manifest": {
+    "status": "PASS",
+    "entries_checked": 458
+  },
+  "raw_source_manifest": {
+    "status": "PASS",
+    "entries_checked": 84
+  },
+  "paper_assets": {
+    "status": "PASS",
+    "pages": 20,
+    "figures": 9,
+    "tables": 8,
+    "references": 32,
+    "latex_inputs_checked": 13,
+    "current_pdf_text_matches_original_replication": true,
+    "all_26_latex_source_members_match_original_replication": true,
+    "pdf_versions_preserved_byte_for_byte": true
+  }
+}

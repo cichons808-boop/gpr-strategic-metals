@@ -1,0 +1,11 @@
+{
+  "price_sample": [
+    "2010-03",
+    "2026-01"
+  ],
+  "risk_calibration": "2009\u20132022, exploratory and retrospective",
+  "controls_primary": "China CLI, global real activity, broad USD return, equal log-return basket of copper and Brent, all lagged one month",
+  "IP_sensitivity": "actual OECD industrial-production year-on-year index; no imputation; missing January observations retained as missing",
+  "HAC": "Bartlett; scores reindexed to monthly calendar before covariance calculation",
+  "LP": "cumulative 100[ln(P[t+h])-ln(P[t-1])], h=0..12; three return/risk lags; pointwise intervals; common-calendar-sample plot; conditional association, not structural identification"
+}

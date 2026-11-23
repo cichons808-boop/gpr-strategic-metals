@@ -1,0 +1,10 @@
+{
+  "start": "2022-03",
+  "calibration_vintage": "202201",
+  "calibration_period": "2009-2018",
+  "threshold_log": 0.5018085956573487,
+  "threshold_level": 0.6517058389555397,
+  "vintage_months": 56,
+  "availability_assumption": "named release month, traded sixth NYSE session; upload timestamps not audited",
+  "selection_status": "secondary rule selected after seeing latest-vintage performance"
+}

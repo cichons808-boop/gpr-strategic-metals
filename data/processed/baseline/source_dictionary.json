@@ -1,0 +1,52 @@
+{
+  "REE": {
+    "column_zero_based": 92,
+    "source_header": "Rare Earth Carbonate REO 42-45 Dom.",
+    "source_code": "nan"
+  },
+  "Lit": {
+    "column_zero_based": 90,
+    "source_header": "Lithium Metal =99%, Battery Grade",
+    "source_code": "nan"
+  },
+  "Kobalt": {
+    "column_zero_based": 75,
+    "source_header": "Cobalt, minimum 99.80% purity, LME spot price, USD/ton",
+    "source_code": "PCOBA"
+  },
+  "Nikiel": {
+    "column_zero_based": 43,
+    "source_header": "Nickel, melting grade, LME spot price, CIF European ports, US$ per metric ton",
+    "source_code": "PNICK"
+  },
+  "Miedz": {
+    "column_zero_based": 29,
+    "source_header": "Copper, grade A cathode, LME spot price, CIF European ports, US$ per metric ton",
+    "source_code": "PCOPP"
+  },
+  "Platyna": {
+    "column_zero_based": 79,
+    "source_header": "Platinum, LME spot price, USD/troy ounce",
+    "source_code": "PPLAT"
+  },
+  "Pallad": {
+    "column_zero_based": 78,
+    "source_header": "Palladium, LME spot price, USD/ troy ounce",
+    "source_code": "PPALLA"
+  },
+  "Krzem": {
+    "column_zero_based": 93,
+    "source_header": "Silicon Lumps CIF NWE (US$/MT)",
+    "source_code": "nan"
+  },
+  "Zloto": {
+    "column_zero_based": 76,
+    "source_header": "Gold, Fixing Committee of the London Bullion Market Association, London 3 PM fixed price, US$ per troy ounce",
+    "source_code": "PGOLD"
+  },
+  "Brent": {
+    "column_zero_based": 45,
+    "source_header": "Crude Oil (petroleum),  Dated Brent, light blend 38 API, fob U.K., US$ per barrel",
+    "source_code": "POILBRE"
+  }
+}

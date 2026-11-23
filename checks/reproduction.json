@@ -1,0 +1,7 @@
+{
+  "command": "python run.py --all",
+  "status": "PASS",
+  "tables_compared": 284,
+  "tables_matching": 284,
+  "data_snapshot": "2026-11-17"
+}

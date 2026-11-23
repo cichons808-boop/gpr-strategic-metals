@@ -1,0 +1,103 @@
+\section{Investment design and competing signals}
+\subsection{Allocation rules and transaction timing}
+
+Each main strategy starts with USD 10,000 and alternates between a full position in one ETF and cash. There is no leverage or short selling. At a monthly decision, it uses the completed previous month's risk or price information. The standard revised-data test executes at the eleventh trading-session close from 15 March 2018; the archive reconstruction uses the sixth session from 8 March 2022. A newly selected position applies after that close, so it does not earn the movement that has already occurred before execution.
+
+For the 2018 exercise, high risk is defined by the 80th percentile of the 2009–2017 history. Six simple geopolitical rules are retained in each fund: hold when China-related risk is low; hold when it is high; hold when it is both high and rising; hold except when it is high and rising; hold when global risk is high and rising; or hold whenever China-related risk is rising. Level and change are separate conditions. Risk can be elevated and falling, or low and rising. These six interpretations are evaluated together rather than reporting only a favourable variant.
+
+The benchmarks ask whether GPR adds something beyond familiar price information. The monthly MA200 rule compares the last completed month's closing price with its 200-session moving average and uses the same monthly execution date as GPR. The daily MA200 rule reads that comparison at the preceding trading close and executes at the next close. This explicit one-session delay avoids using the new closing price to claim a position that already earned that day's return.
+
+The time-series momentum benchmark holds the fund when its completed trailing twelve-month return is positive, and otherwise holds cash. A sector-rotation benchmark ranks REMX, LIT and COPX on their twelve-minus-one-month return: it excludes the most recent month, selects the highest positive past return and otherwise holds cash. This is a three-fund rotation comparison, not a claim to represent momentum across the whole stock market. SPY provides a broad equity opportunity-cost comparison.
+
+Costs are ten basis points, or 0.1\%, per one-way unit of portfolio turnover. An initial USD 10,000 purchase therefore costs about USD 10, and a later exit incurs another charge at the then-current value. Unchanged weights incur no additional turnover cost. Moving from one fully invested ETF to another involves a sale and a purchase. Initial purchases and final liquidations are charged, and higher-cost alternatives are retained.
+
+The wealth calculation is
+\begin{equation}
+W_d=W_{d-1}\bigl[1+w_{d-1}R^E_d+(1-w_{d-1})R^c_d\bigr]
+                  \bigl[1-c|w_d-w_{d-1}|\bigr].
+\label{eq:wealth}
+\end{equation}
+Here $W_d$ is wealth after the decision at trading close $d$, $w_d$ is the ETF weight of zero or one, $R^E_d$ is the adjusted return between consecutive closes, $R^c_d$ is cash income over that interval, and $c$ is the one-way proportional cost. The old weight earns the interval's return, followed by the cost of changing the position. The rotation benchmark uses the corresponding vector of weights and the sum of absolute weight changes.
+
+\subsection{Forecasting beyond a market-and-trend model}
+
+A separate nested comparison evaluates incremental predictive information. The benchmark forecasts the ETF return to the next monthly execution close using five already observed price variables: the previous calendar month's own return, twelve-minus-one-month momentum, the distance from MA200, the SPY return and the EEM return. An augmented version adds the prior completed month's global GPR level, change, high-state indicator and interaction. Another adds the analogous China-related terms. The two risk additions are evaluated separately.
+
+Initial estimation uses only return labels ending by December 2017, with 73 usable examples at the first 2018 forecast. Thereafter the window expands. Every training label must end strictly before the current execution close, so a return ending at today's close cannot enter a model used to trade at that same close. A minimum of sixty labels is required. The strategy holds the ETF only when its predicted return exceeds a cash forecast based on the previously observed rate.
+
+For the archive exercise, historical risk features and coefficients are rebuilt from each month's actual release. Price features remain based on already completed months, and the same strict endpoint rule applies. This is stronger than simply replacing the last risk observation in a model trained on the 2026 history. All forecast origins, training counts and last training-label dates are supplied in the replication files.
+
+Forecast accuracy is measured relative to the market-and-trend benchmark:
+\begin{equation}
+R^2_{\mathrm{forecast}}
+=1-\frac{\sum_t(R_t-\widehat R^{\mathrm{GPR}}_t)^2}
+         {\sum_t(R_t-\widehat R^{\mathrm{base}}_t)^2}.
+\label{eq:r2}
+\end{equation}
+A positive 2\% means that adding GPR reduces mean-squared prediction error by 2\%; a negative value means a larger error. The Clark–West comparison adjusts the nested-model error difference for estimation noise from additional parameters \citep{clark2007}. One-sided HAC $p$-values and a Holm correction across the six fund-by-risk additions are reported. These remain retrospective comparisons, given the broader research and data-vintage limitations.
+
+\section{Results against investment benchmarks}
+\subsection{Historical profit and the price-based alternatives}
+
+Table~\ref{tab:benchmark} gives the common-date 2018–2026 results after costs. The threshold calibration, execution delay and period are stated together because all affect the outcome. CAGR is the constant annual growth rate that reproduces the final compounded wealth; it is not the arithmetic mean of yearly returns. Maximum drawdown is the largest decline from a preceding portfolio peak.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Net annualised returns, 15 March 2018–30 October 2026}
+\label{tab:benchmark}
+\input{tables/benchmark_returns.tex}
+\tabnote{Entries are CAGRs in percent. Monthly decisions execute at the eleventh session; daily MA200 uses a prior-close signal and next-close execution. The GPR history is revised data, with thresholds calibrated from 2009–2017. Costs are ten basis points per one-way turnover. The full output additionally reports drawdowns, Sharpe ratios, exposure, costs and every forecast-based allocation.}
+\end{table}
+
+The rule avoiding high and rising China-related risk earns \OosLitAvoidCagr\% annually in LIT and \OosCopxAvoidCagr\% in COPX. Passive returns are \OosLitPassiveCagr\% and \OosCopxPassiveCagr\%, respectively. These rules also exceed the daily MA200 returns of \OosLitDailyMACagr\% and \OosCopxDailyMACagr\%, and the twelve-month momentum returns of \OosLitMomentumCagr\% and \OosCopxMomentumCagr\%. The comparison provides a concrete reason to investigate the geopolitical filter beyond its improvement on passive sector ownership.
+
+The risk experience still matters. The LIT candidate has a \OosLitAvoidDrawdown\% maximum drawdown, compared with \OosLitDailyMADrawdown\% for daily MA200 and \OosLitPassiveDrawdown\% passively. COPX's candidate drawdown is \OosCopxAvoidDrawdown\%, versus \OosCopxDailyMADrawdown\% for daily MA200 and \OosCopxPassiveDrawdown\% passively. A higher final CAGR can therefore come with a different and sometimes less favourable path of losses.
+
+\fig{04_benchmark_wealth}{Geopolitical filters and standard alternatives on common 2018–2026 dates. The GPR candidate holds LIT or COPX except after high and rising China-related risk. Daily MA200, passive fund ownership and the cash proxy share the same initial capital and costs. The logarithmic scale compares proportional wealth changes. These are retrospective results using revised GPR data.}{fig:wealth}
+
+REMX gives a different comparison. Its low-China-risk rule earns \OosRemxLowCagr\%, against \OosRemxDailyMACagr\% for daily MA200 and \OosRemxMomentumCagr\% for momentum. Its \OosRemxLowDrawdown\% drawdown is substantially smaller, so the return ranking is not a complete investor-utility comparison. The simple high-and-rising global-risk rule loses money. Positive PrNd price evidence has not translated into a universal directional rare earth equity rule.
+
+The three-fund rotation benchmark earns about $-5.12\%$ annually, while passive SPY earns \OosSpyPassiveCagr\% with a \OosSpyPassiveDrawdown\% maximum drawdown. The rotation result is retained despite being unfavourable. SPY is a different exposure, but it makes the opportunity cost of the sector allocation visible rather than treating improvement on a sector's own passive history as sufficient investment evidence.
+
+\subsection{Factor-adjusted performance and uncertainty}
+
+To separate average returns from familiar equity exposures, daily excess portfolio returns are regressed on the US market, size, value, profitability, investment and momentum factors \citep{fama2015,french2026}:
+\begin{equation}
+R_{p,d}-R_{f,d}=\alpha+\symbf{b}'\symbf{F}_d+e_d.
+\label{eq:alpha}
+\end{equation}
+Here $R_{f,d}$ is the risk-free return supplied with the factors, $\symbf{F}_d$ is the six-factor vector, and the intercept $\alpha$ is the average return left after those static exposures. Annualised alpha is $252\alpha$ and is an arithmetic rate, not CAGR. The opening transaction cost is included in the first holding-interval return. Five-lag HAC inference is used. The downloaded factors end in September 2026, so attribution ends then, while portfolio wealth continues through October. US factors do not fully span every foreign-country and commodity exposure of these international funds.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Selected geopolitical allocations and factor-adjusted comparisons}
+\label{tab:alpha}
+\setlength{\tabcolsep}{4pt}
+\input{tables/alpha_comparison.tex}
+\tabnote{The GPR rows are REMX low-China-risk and the LIT/COPX rules avoiding high and rising China risk. CAGR and drawdown cover the full 2018–2026 portfolio window. Alpha is the annualised six-factor intercept through September 2026. All rates are percentages. Displayed $p$-values are nominal; none of these GPR alpha results is significant after adjustment across the 24 GPR-related candidates.}
+\end{table}
+
+The LIT avoidance candidate has an annualised alpha of approximately \OosLitAvoidAlpha\%, with nominal $p=\OosLitAvoidAlphaP$; COPX's is about \OosCopxAvoidAlpha\%, with $p=\OosCopxAvoidAlphaP$. Their confidence intervals remain wide. The low-risk REMX alpha is approximately \OosRemxLowAlpha\%, with $p=\OosRemxLowAlphaP$. Positive point estimates therefore remain candidates for further evaluation, rather than established residual premiums.
+
+\fig{05_factor_alpha}{Annualised six-factor alphas and pointwise 95\% HAC intervals. A positive point estimate with an interval crossing zero is imprecise evidence of performance beyond the included factors. Daily MA200 and twelve-month momentum are shown alongside the GPR candidates. The factor sample ends in September 2026 and the factors are US equity benchmarks.}{fig:alpha}
+
+For each fund, paired monthly log returns also compare GPR allocations directly with cash, passive ownership, monthly MA200, daily MA200, momentum and the market-and-trend forecast allocation. Each comparison family applies Holm adjustment across eighteen direct GPR rules and six GPR-augmented forecast allocations. None establishes positive outperformance at a 5\% adjusted level. Block-bootstrap intervals preserve six- or twelve-month groups \citep{kunsch1989}. For example, the six-month-block interval for LIT's annualised mean log advantage over monthly MA200 is approximately $[-12.35,24.13]$ percentage points; COPX's is $[-5.75,32.05]$. These are not confidence intervals for CAGR.
+
+\fig{06_annual_returns_clear}{Calendar-year performance with separate, horizontal year labels. Cell values are percent returns after costs, with the colour scale capped at $\pm50\%$. The first year begins at the March 2018 execution date and 2026 ends in October, so those two cells are partial calendar years. The complete year-by-year benchmark table is supplied separately.}{fig:annual}
+
+\subsection{Does adding GPR improve a return forecast?}
+
+The portfolio results and forecast-error results answer different questions. In the revised-data test, all six global- or China-risk additions have negative forecast $R^2$ relative to the market-and-trend model. The range is approximately $-1.44\%$ to $-8.59\%$. Clark–West nominal one-sided $p$-values are about 0.17–0.31 and become one after the six-comparison correction. The data do not establish an improvement in mean-squared accuracy from these added risk variables.
+
+\begin{table}[!htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Incremental forecast accuracy and the corresponding allocations}
+\label{tab:forecast}
+\input{tables/forecast_comparison.tex}
+\tabnote{$R^2$ is a percentage relative to the same market-and-trend forecast; negative values mean larger error. $N$ counts completed holding periods: 103 from 2018 and 55 in the archive exercise. The final incomplete forecast period is excluded from accuracy but its decision remains in the wealth simulation. CAGR is the return from converting the respective forecast to an ETF/cash decision. CW denotes the one-sided Clark–West comparison; Holm adjustment covers six additions per sample.}
+\end{table}
+
+A forecast allocation can still earn money without reducing squared error. It trades on whether a prediction exceeds the cash threshold, not on the full distance between prediction and realised return. For example, the REMX global-GPR forecast allocation earns \OosRemxGlobalForecastCagr\% annually, compared with \OosRemxMarketCagr\% for the price-only forecast allocation, while its squared prediction error is 5.59\% larger. This is not a contradiction: the investment rule and the forecast loss function reward different features of the predictions. It also makes the particular profitable allocation an insufficient basis for claiming general forecasting superiority.
+
+\fig{07_incremental_forecasts}{Forecast accuracy added by global or China-related GPR. The benchmark already includes own-return dynamics, momentum, a moving-average gap and broad-market returns. Negative bars mean larger mean-squared errors. The left panel uses revised historical risk data from 2018; the right refits models from each actual archived risk release from 2022.}{fig:forecasts}

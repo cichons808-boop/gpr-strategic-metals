@@ -1,0 +1,39 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Latin Modern Roman}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{amsmath,booktabs,graphicx,geometry,natbib,hyperref}
+\usepackage[protrusion=false]{microtype}
+\usepackage{xcolor,caption,fancyhdr,setspace,placeins,array}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\geometry{left=26mm,right=26mm,top=24mm,bottom=25mm,headheight=14pt,headsep=9mm}
+\definecolor{ink}{HTML}{213F50}
+\hypersetup{colorlinks=true,linkcolor=ink,citecolor=ink,urlcolor=ink,pdftitle={Geopolitical Risk and Returns in Rare Earth and Strategic Metal Markets},pdfauthor={}}
+\captionsetup{font=small,labelfont=bf,justification=justified,singlelinecheck=false,skip=7pt}
+\setstretch{1.03}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{1.5pt}
+\setlength{\textfloatsep}{15pt plus 3pt minus 3pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{13pt plus 2pt minus 2pt}
+\setlength{\bibsep}{4pt}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\renewcommand{\topfraction}{.88}
+\renewcommand{\bottomfraction}{.75}
+\renewcommand{\textfraction}{.10}
+\renewcommand{\floatpagefraction}{.77}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Geopolitical Risk and Strategic Metals}
+\fancyhead[R]{\small 2010–2026}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{.3pt}
+\raggedbottom
+\emergencystretch=1.3em
+\input{numbers.tex}
+\newcommand{\fig}[3]{\begin{figure}[!htbp]\centering\includegraphics[width=\textwidth]{figures/#1.pdf}\caption{#2}\label{#3}\end{figure}}
+\newcommand{\tabnote}[1]{\par\vspace{4pt}\begin{minipage}{\textwidth}\footnotesize\textit{Notes:} #1\end{minipage}}
+

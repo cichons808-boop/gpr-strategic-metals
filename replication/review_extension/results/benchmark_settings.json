@@ -1,0 +1,21 @@
+{
+  "post2018_sample": [
+    "2018-03-15",
+    "2026-10-30"
+  ],
+  "post2018_execution": "eleventh trading session: conservative allowance for the old monthly update around the tenth calendar day",
+  "archive_execution": "sixth trading session under the revised early-month publication convention",
+  "initial_training_labels_end": "2017-12-31",
+  "threshold_calibration_post2018": "2009\u20132017, latest revised history",
+  "threshold_calibration_archive": "2009\u20132018 in January 2022 release",
+  "initial_model_training_min": 60,
+  "forecast_update": "expanding; target endpoint strictly before current execution close",
+  "benchmark_MA200": "previous calendar month-end adjusted close above its 200-session average",
+  "benchmark_DailyMA200": "previous trading-session close above its own 200-session average; executed at the current close",
+  "benchmark_TSMOM12": "previous calendar month-end twelve-month return positive",
+  "sector_rotation": "highest positive twelve-minus-one-month return among REMX/LIT/COPX; otherwise cash",
+  "factor_model": "daily US FF5 plus US momentum; ex-post attribution, not predictor; annualised arithmetic alpha=252*daily intercept",
+  "factor_last_date": "2026-09-30",
+  "selection_status": "retrospective chronological evaluation; rules and period already inspected; not independent confirmation",
+  "legacy_data": "old-method 2021 workbook, not a full 2018 vintage sequence"
+}

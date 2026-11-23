@@ -1,0 +1,19 @@
+{
+  "start": "2011-01",
+  "end": "2026-10",
+  "n_monthly_decisions": 190,
+  "calibration": "2000-01 through 2009-12",
+  "thresholds_log": {
+    "GPR": 4.958853831167692,
+    "GPRC_CHN": 0.4014167566970251
+  },
+  "thresholds_original": {
+    "GPR": 141.43045295962543,
+    "GPRC_CHN": 0.4939397481746675
+  },
+  "execution": "sixth observed US trading session close",
+  "data_vintage": "November 2026 revised GPR; archived check remains 2022\u20132026",
+  "cost_bps_one_way": 10,
+  "initial_USD": 10000,
+  "test_family": 18
+}

@@ -1,0 +1,11 @@
+{
+  "prnd_SD_change_log1p_GPR_CHN": 0.1376183426159323,
+  "threshold_GPR_CHN": 0.8180185512878544,
+  "state_calibration": "2009-01 through 2022-12",
+  "seed": 112026,
+  "exact_qr90_beta": [
+    6.20194491747796,
+    2.617721654295051,
+    0.29292731815852846
+  ]
+}

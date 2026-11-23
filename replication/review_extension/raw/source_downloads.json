@@ -1,0 +1,49 @@
+[
+  {
+    "name": "TWEXBGSMTH.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TWEXBGSMTH&cosd=1999-01-01&coed=2026-10-31",
+    "bytes": 4929,
+    "first": "2006-01-01",
+    "last": "2026-10-01",
+    "n": 250
+  },
+  {
+    "name": "IGREA.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IGREA&cosd=1999-01-01&coed=2026-10-31",
+    "bytes": 7844,
+    "first": "1999-01-01",
+    "last": "2026-09-01",
+    "n": 333
+  },
+  {
+    "name": "CHNLOLITOAASTSAM.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CHNLOLITOAASTSAM&cosd=1999-01-01&coed=2026-10-31",
+    "bytes": 8565,
+    "first": "1999-01-01",
+    "last": "2026-10-01",
+    "n": 334
+  },
+  {
+    "name": "CHNPRINTO01IXPYM.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CHNPRINTO01IXPYM&cosd=1999-01-01&coed=2026-10-31",
+    "bytes": 5029,
+    "first": "1999-01-01",
+    "last": "2023-11-01",
+    "n": 282
+  },
+  {
+    "name": "FF5_daily.zip",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_daily_CSV.zip",
+    "bytes": 150489
+  },
+  {
+    "name": "MOM_daily.zip",
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Momentum_Factor_daily_CSV.zip",
+    "bytes": 85338
+  },
+  {
+    "name": "EEM_daily.json",
+    "url": "https://query2.finance.yahoo.com/v8/finance/chart/EEM?period1=1230768000&period2=1793491200&interval=1d",
+    "bytes": 492738
+  }
+]

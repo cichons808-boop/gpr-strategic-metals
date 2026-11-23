@@ -1,0 +1,93 @@
+\section{Data and the timing of information}
+\subsection{Physical materials, traded funds and economic controls}
+
+The main PrNd series is published by SDM Magnetics and attributed by the publisher to Asian Metal assessments \citep{sdm2026}. It is a mischmetal quote in renminbi per metric tonne, not a record of executable transactions. The monthly price is the arithmetic mean of available dated quotes. Missing quote days are not filled before averaging. January 2026 is the final complete month in the retained source; an isolated February observation is excluded.
+
+GUK Magnetics supplies supplementary neodymium and samarium histories from July 2009 to September 2026, described as month-end high prices in USD per kilogram \citep{guk2026}. The IMF workbook provides cobalt, nickel, copper, platinum, palladium, rare earth carbonate, lithium metal and silicon \citep{imfdata,imfmethod}. Five of these series support a January 2011–August 2026 comparison. Rare earth carbonate, lithium metal and silicon begin in June 2012 in the retained workbook and remain explicitly shorter supplementary benchmarks. Carbonate containing 42–45\% rare earth oxides is not an index of all rare earth elements; lithium metal is distinct from lithium carbonate.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Data panels and their economic roles}
+\label{tab:data}
+\begin{tabular}{@{}P{29mm}P{42mm}P{77mm}@{}}
+\toprule
+Panel & Coverage used & Measurement and role \\
+\midrule
+PrNd & January 2010–January 2026 & Available publisher quotes; monthly mean; CNY per tonne. Main price model: 191 observations. \\
+Other material prices & Long series from 2011; three IMF series from 2012 & IMF benchmarks and separate neodymium/samarium quotes; supplementary material comparison and commodity controls. \\
+Sector funds & Daily prices; main test from March 2018 & REMX, LIT and COPX adjusted closes; SPY and EEM as market comparisons or predictors. \\
+Economic activity & Monthly; through the PrNd sample where available & China CLI and global real activity; actual China industrial production as a shorter, matched-sample check. \\
+Dollar and cash & Dollar from 2006; cash over all test dates & Broad dollar changes for the price model; daily effective federal funds rate for cash accrual. \\
+Equity factors & Daily; through September 2026 & US five-factor returns and momentum; ex-post risk adjustment. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Daily adjusted prices for REMX, LIT, COPX and SPY are retained from the market-data provider; EEM adds an emerging-market predictor \citep{yahoo2026}. Fund definitions and inception dates are checked against issuer documentation \citep{vaneck2026,globalxlit,globalxcopx}. These are equity investments. REMX holds firms involved in the strategic-material value chain; LIT includes mining, refining and battery-related production; COPX represents copper-mining firms. Their historical distributions and corporate actions follow the provider's adjustment methodology. Fund expenses already affect prices and are not deducted again.
+
+The economic controls add four dimensions. China's amplitude-adjusted composite leading indicator, or CLI, measures its business-cycle environment. The Dallas Fed global real activity index is based on bulk dry cargo shipping rates and serves as a global commodity-demand proxy \citep{dallas2026}. Broad dollar log changes capture a financial and exchange-rate influence. An equal-weight average of copper and Brent log returns captures a wider commodity cycle. PrNd remains in CNY; the dollar control does not mechanically convert its quote into dollars.
+
+Actual Chinese industrial production is examined separately using the OECD index relative to the same month of the previous year \citep{oecd2026}. This source ends in November 2023 and has missing January observations in several years. They are not imputed. With a one-month control lag, the resulting price model ends in December 2023 and contains 152 complete observations. An uncontrolled model is re-estimated on exactly those dates, so a change in the coefficient is not automatically attributed to the added control when the sample also changes. The longer CLI is labelled as a leading indicator, not as industrial production.
+
+\subsection{Historical observations and historical availability}
+
+The original GPR working paper was publicly available in 2018 \citep{caldara2018}. This makes 2018 a reasonable conservative boundary for a post-publication investment exercise. It does not establish that every current country series, methodology or historical value was available then. The older GPR page describes monthly updates around the tenth calendar day; the methodology changed in October 2021 \citep{gprold2021}. Current documentation describes early-month updates and possible revisions \citep{gprdata}.
+
+The distinction affects the design. The revised-data exercise starts on 15 March 2018 and trades at the eleventh observed US trading-session close of each month, allowing time after the older update convention. All monthly price-based comparisons use the same execution dates. It uses the November 2026 risk history and is a retrospective chronological test, rather than a reconstruction of every original 2018 release. Initial model estimation ends in 2017, but the evaluation period was examined during research; it is not an untouched confirmation sample.
+
+The archive exercise instead starts on 8 March 2022, uses 56 retained monthly releases, and trades at the sixth session under the later early-month convention. Forecast coefficients are refitted from the historical risk data in each release, not from the 2026 replacement for those data. Its threshold is fixed from the 2009–2018 history in a January 2022 archive file. Exact historical server upload timestamps are not audited; availability is inferred from the named release and documented update convention.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Three distinct uses of historical information}
+\label{tab:timing}
+\begin{tabular}{@{}P{35mm}P{50mm}P{63mm}@{}}
+\toprule
+Exercise & Risk calibration or version & Interpretation \\
+\midrule
+Price associations, 2010–2026 & Selected 2009–2022 state definition; latest data & Retrospective explanation of historical quote returns. \\
+Chronological test from 2018 & Thresholds from 2009–2017; initial forecasts estimated through 2017; revised risk history & Sequential forecasts using earlier closed outcomes, with explicit limits on original data availability and model selection. \\
+Archived test, 2022–2026 & January 2022 frozen threshold; each month's own release for signals and refitting & Reconstruction using retained risk versions, conditional on the stated release convention. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The retained old-method workbook supplies an additional 2018–2021 sensitivity check. It contains a frozen 2021 history, including a differently scaled China series. Thresholds are recalibrated within that method before comparing classifications. This snapshot is useful evidence of method sensitivity, but is not presented as a complete sequence of 2018 vintages.
+
+Cash accrues the previous calendar day's effective federal funds rate using daily ACT/360 compounding, including weekends between trading closes \citep{fred2026}. It is an opportunity-cost proxy; an individual broker rate can differ. All results are before tax and in USD. Factor attribution uses the risk-free series supplied with the French factors to match their definitions \citep{french2026}; this is distinct from the cash assumption used in portfolio allocation.
+
+\fig{01_prices_and_risk}{PrNd prices and China-related geopolitical risk. The price is a monthly mean of available publisher quotes, while risk is a news-based measure in original units. The panels have different units. A high price level is different from a high monthly return.}{fig:prices}
+
+\section{Price models and dynamic responses}
+
+The monthly quote return is
+\begin{equation}
+r_t=100\,[\ln(P_t)-\ln(P_{t-1})].
+\label{eq:return}
+\end{equation}
+Here $P_t$ is the monthly price and $\ln$ denotes the natural logarithm. A price increase from 100 to 110 is a 10\% simple return and about 9.53 log-return percentage points. Regressions use log returns; portfolio wealth uses compounded simple returns.
+
+Risk enters as $g_t=\ln(1+\mathrm{GPR}_t)$. Its level describes how elevated the measured risk is; $\Delta g_t=g_t-g_{t-1}$ describes whether it increased. Adding one allows very small or zero country values. For the selected price model, $z_t$ is the risk change centred and divided by its standard deviation over 2009–2022. A one-unit increase in $z_t$ is therefore a one-standard-deviation risk change, rather than an arbitrary unit of the source index.
+
+The state-dependent regression is
+\begin{equation}
+r_t=\alpha+\beta z_t+\gamma H_{t-1}+\delta z_tH_{t-1}
+       +\phi r_{t-1}+\symbf{\theta}'\symbf{x}_{t-1}+u_t.
+\label{eq:state}
+\end{equation}
+The constant $\alpha$ allows for average return, and $r_{t-1}$ allows for persistence in the price's own movement. The indicator $H_{t-1}$ equals one when previous-month China-related risk exceeds the 80th percentile of its 2009–2022 calibration history, and zero otherwise. An 80th percentile is exceeded by roughly one fifth of the calibration observations; it need not classify one fifth of a later sample as high risk. The vector $\symbf{x}_{t-1}$ contains the lagged economic controls. The unexplained component is $u_t$.
+
+The product $z_tH_{t-1}$ is an interaction. In the lower state, $H_{t-1}=0$ and the slope on a risk change is $\beta$. In the high state it is $\beta+\delta$. The separate state term $\gamma H_{t-1}$ also allows average return to differ. For example, a high-state slope of three means about three log-return percentage points associated with a typical risk increase, holding the other terms fixed. It does not mean that every high-risk month earns three percent.
+
+The original model sets the economic-control coefficients to zero. The primary extension adds lagged China CLI, global activity, dollar returns and the copper–Brent basket return. A further check uses their same-month values; this answers a more conditional question because contemporaneous controls may themselves respond to the same information. The industrial-production model uses its actual shorter coverage and a matched baseline. These are robustness exercises for the selected association, not newly independent discoveries.
+
+Dynamic responses are estimated with local projections \citep{jorda2005}. At each horizon $h$, the dependent variable is the cumulative price change
+\begin{equation}
+y_{t,h}=100\,[\ln(P_{t+h})-\ln(P_{t-1})],\qquad h=0,\ldots,12.
+\label{eq:lp}
+\end{equation}
+The regression retains the current risk change, prior state and their interaction, adds three lags each of returns and risk changes, and uses the lagged economic controls. At $h=0$, the outcome is the current monthly return; at $h=3$, it is the cumulative change through three further months. Estimating a separate regression at each horizon lets the data describe the timing without imposing a recursive VAR response.
+
+The main response plot uses the same 177 dates at every horizon, from May 2010 to January 2025; all required later prices are observed by January 2026. Horizon-specific samples are retained separately. The high-state response is again the sum of the risk and interaction slopes. It is a response conditional on the included variables, not the effect of an externally identified geopolitical shock.
+
+Uncertainty uses Bartlett HAC covariance estimates with a finite-sample correction, following \citet{newey1987}. The main regressions allow three monthly lags; local projections use the larger of three and $h+1$. Scores are placed back on the monthly calendar before covariance calculation, preserving gaps in the industrial-production sample. Reported intervals are pointwise 95\% bands. The wider original search and its Holm and false-discovery-rate adjustments remain in the archive \citep{holm1979,benjamini1995}. Nominal significance in a selected model is interpreted alongside that selection history.

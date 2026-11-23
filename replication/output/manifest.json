@@ -1,0 +1,16 @@
+{
+  "download_date": "2026-11-17",
+  "start": "2012-06",
+  "end": "2026-08",
+  "return_n": 170,
+  "gpr_change_sd": 0.22466806318893962,
+  "high_gpr_threshold": 132.93320922851564,
+  "sources": {
+    "gpr": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
+    "imf": "https://www.imf.org/-/media/files/research/commodityprices/monthly/external-data.xlsx"
+  },
+  "sha256": {
+    "gpr.xls": "32e54b08df4cbc2954c3b89970008a7a3a2f2e94ed4184135908248e4d01cd83",
+    "imf.xlsx": "e0bc0cbbd08208e9868fb16e21992ff4b86a7676a2b5f64d32a02bdb8bdcc464"
+  }
+}

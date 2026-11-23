@@ -1,0 +1,24 @@
+{
+  "sample_start": "2019-01-09",
+  "sample_end": "2026-10-30",
+  "initial_capital_USD": 10000,
+  "cash_proxy": "lagged DFF daily, ACT/360",
+  "execution": "close of sixth observed US trading session of each month",
+  "calibration": "2009-01 through 2018-12",
+  "level_thresholds": {
+    "GPR": 105.22996978759765,
+    "GPRC_CHN": 0.6517200708389282
+  },
+  "log_level_thresholds": {
+    "GPR": 4.6656061241079225,
+    "GPRC_CHN": 0.5018086084808401
+  },
+  "primary_rule": "ChinaHighRising",
+  "primary_cost_bps": 10,
+  "break_even_cost_bps_vs_passive": null,
+  "time_robustness": [
+    3,
+    6,
+    11
+  ]
+}

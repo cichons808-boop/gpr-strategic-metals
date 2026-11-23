@@ -1,0 +1,75 @@
+\section{Archived releases, calibration and revision attribution}
+\subsection{Refitting from the information in each release}
+
+The archive exercise repeats the comparisons on 8 March 2022–30 October 2026. Each month's geopolitical allocation and risk-augmented forecast uses that release's risk history, with the threshold fixed from the January 2022 archive. The nested models are re-estimated using only return labels that ended before the current decision close. Standard price-based rules are evaluated on the same dates. This directly addresses the difference between using historically available risk values and a later revised historical file.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Net annualised returns using archived GPR releases, 2022–2026}
+\label{tab:archive}
+\input{tables/archive_returns.tex}
+\tabnote{Entries are CAGRs in percent. Monthly execution is at the sixth trading-session close; daily MA200 retains its one-session delay. Thresholds use the 2009–2018 history in the January 2022 archive. Risk-augmented models are refitted from each release's historical values. Costs are ten basis points one way. This sample differs from the 2018 exercise in dates, calibration and execution convention, so differences between the tables are not attributed solely to revisions.}
+\end{table}
+
+The results again depend on the vehicle. REMX's low-risk rule earns \ArcRemxLowCagr\% annually, compared with \ArcRemxDailyMACagr\% for daily MA200, \ArcRemxMomentumCagr\% for momentum and \ArcRemxCashCagr\% for cash. It is invested during only four monthly intervals. LIT's avoidance rule earns \ArcLitAvoidCagr\%, while its momentum benchmark earns \ArcLitMomentumCagr\%. COPX's avoidance rule earns \ArcCopxAvoidCagr\%, against \ArcCopxPassiveCagr\% passively and \ArcCopxDailyMACagr\% for daily MA200. A result that is attractive in one fund and period therefore does not carry over automatically to another.
+
+The forecast comparison gives a small positive accuracy result for the archived COPX China-risk addition: its $R^2$ relative to the market-and-trend model is 2.71\%. The nominal Clark–West $p$-value is 0.115 and the six-comparison-adjusted value is 0.687. Other archive risk additions have negative error-based $R^2$. This is a useful candidate for further observation, with limited precision over 55 completed holding periods, rather than a broad validation of geopolitical forecasting.
+
+\subsection{The threshold remains part of the economic result}
+
+Fixed and adaptive thresholds are compared without selecting the best percentile after observing performance. The alternatives are the 70th, 80th and 90th percentiles of either the fixed earlier history or the preceding 120 months. The adaptive reference excludes the month being classified. In the archive version, its historical values come from the current archived release, not the final revised history.
+
+For the 2018–2026 avoidance rule at the 80th percentile, LIT earns 17.54\% under the fixed reference and 20.32\% under the adaptive reference; COPX earns 19.61\% and 25.76\%. In the archived 2022–2026 version, LIT changes from 3.93\% fixed to approximately $-0.04\%$ adaptive, while COPX changes from 23.61\% to 22.66\%. These comparisons show why a favourable implementation should remain attached to its precise state definition and sample.
+
+\fig{08_threshold_stability}{Fixed and adaptive thresholds for the rule avoiding high and rising China-related risk. The upper panels use the revised-data test from 2018; the lower panels use archived releases from 2022. Adaptive thresholds use the previous 120 months and exclude the classified month. Each panel retains all three tested percentiles. The panels differ in evaluation period and execution convention.}{fig:thresholds}
+
+The long-history diagnostic also remains relevant. Over 2011–2026, a COPX high-risk rule with a fixed 2000–2009 threshold earns 7.70\%, but its trailing-120-month version earns $-1.37\%$. Those complete results are retained in the supplementary files as retrospective context, not evidence of a live 2011 signal. The sensitivity raises a substantive question: a fixed risk threshold may partly identify persistent shifts in the risk distribution and market cycle. The added benchmarks and macro controls examine that concern but do not make it disappear.
+
+\subsection{Which revised decisions change portfolio wealth?}
+
+A matched comparison isolates the effect of numerical revisions more directly. It applies the archived and latest risk values to the same REMX low-risk rule, the same March 2022 start, the same January 2022 frozen threshold, the same execution dates, the same market prices and the same costs. Only the risk observations used for classification differ.
+
+The archived path ends at USD 13,844, a CAGR of 7.25\%, while the revised-data match ends at USD 18,550, or 14.22\%. Exactly two monthly investment classifications change. In both cases, the archived value puts the portfolio into REMX, while the revised value exceeds the low-risk threshold and leaves it in cash. Table~\ref{tab:attribution} identifies the decisions and the subsequent ETF returns.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{The two revised classifications and their wealth effects}
+\label{tab:attribution}
+\input{tables/revision_attribution.tex}
+\tabnote{Decision dates are execution closes. Risk observations refer to the completed preceding month, and the common threshold is 0.651706 in original source units. ETF returns are gross holding returns until the next monthly execution close, in percent. Wealth effects are USD contributions to the matched terminal difference and include the portfolio's cash and cost conventions.}
+\end{table}
+
+The February 2023 decision uses a January risk value of about 0.588 in the archive and 0.670 in the revised file. REMX then loses about 10.33\% until the next execution close. The January 2024 decision uses a December value of about 0.629 versus 0.702, followed by a 15.76\% holding loss. Later revisions remove both losing exposures from the reconstructed low-risk strategy. The index values are source measurements, not probabilities of a particular geopolitical event.
+
+Compounding makes a dollar attribution depend on the order in which the two decisions are changed. Let $W_{ab}$ denote final wealth when classification one is revised if $a=1$ and classification two if $b=1$. An equal average of changing decision one first and second gives
+\begin{equation}
+A_1=\tfrac12\bigl[(W_{10}-W_{00})+(W_{11}-W_{01})\bigr].
+\label{eq:attribution}
+\end{equation}
+The corresponding average for decision two gives $A_2$, and the contributions add exactly to $W_{11}-W_{00}$. This allocates approximately USD 1,845 to the first decision and USD 2,861 to the second, totalling USD 4,706. It is a mechanical attribution with observed prices held fixed, not an estimate of an expected future revision profit.
+
+\fig{09_vintage_audit}{Matched REMX wealth under archived and revised risk values. Shaded intervals mark the two holding periods with changed classifications. Sample, threshold, market prices, execution and costs are fixed; the difference comes from the risk version. The cash path provides the opportunity-cost comparison. Two avoided losing periods explain a large compounded difference despite most monthly classifications being unchanged.}{fig:vintages}
+
+\section{Economic interpretation and limitations}
+
+The physical-price and investment findings fit together. Geopolitical information can matter for a particular material quote during the month in which the news arrives. The controlled PrNd association and the local projections support studying that timing. A listed fund is a different claim, with operating costs, financing, country exposure and downstream demand added to the material-price channel. Acting after a monthly index is published also means investing after some price adjustment may already have occurred.
+
+Economic value has several meanings here. Positive historical profit, improvement on passive ownership, improvement on a trend rule, lower forecast error and positive factor-adjusted alpha are different outcomes. The LIT and COPX avoidance rules deliver attractive revised-data historical CAGRs, but the uncertainty around their additional value is substantial. GPR-augmented forecasts can change profitable trading classifications without generally lowering squared errors. The archive exercise then shows that later revisions change those classifications again.
+
+The availability distinction is especially important for the 2018 boundary. Sequential estimation with earlier closed return labels is an out-of-sample forecasting procedure with respect to coefficient estimation. It does not by itself guarantee that the data version existed then or that the strategy was chosen independently of the later results. The global working paper's publication also does not establish the first availability of every current country series. The complete 2018–2021 release sequence is not used here; the 2021 old-method snapshot is a sensitivity diagnostic, and the actual archived reconstruction begins in 2022.
+
+The macro models remain conditional associations. They do not use an external geopolitical instrument, dated firm-level exposure or measured lost production to isolate a causal mechanism. Same-month controls may absorb part of a transmission channel, while lagged controls cannot remove every common influence. The IP comparison makes sample composition visible, and the response plot avoids claiming a precise persistent effect from wide intervals. The state definition and the original specification search remain material research choices.
+
+Several practical boundaries also remain. Cash earns an interbank-rate proxy, trading costs are stated scenarios rather than observed historical spreads, and results exclude taxes, currency conversion, leverage and large-order market impact. US equity factors are informative but incomplete risk controls for globally exposed sector funds. The three-fund rotation benchmark has a deliberately narrow universe. None of these qualifications changes the reported arithmetic; they determine the economic scope of its interpretation.
+
+For procurement, the PrNd result could motivate closer monitoring of inventories and suppliers during an already elevated-risk period. Actual savings would require a firm's dated purchase quotes, contracts, storage costs and delivery constraints. A research product could similarly combine material definitions, archived signals and decision-level attribution. Customer willingness to pay and commercial rights would need separate evidence; the paper does not convert investment backtests into a speculative sales valuation.
+
+The most useful next validation is to fix a compact candidate family and evaluate genuinely new observations or an independent quote source. Additional production, inventory and export information could then test specific mechanisms. The present contribution is a reproducible account of where the existing evidence is strong, where profit depends on the implementation, and which decisions change when the information set changes.
+
+\section{Conclusion}
+
+The pricing and investment implications of geopolitical risk are state-dependent, commodity-specific and sensitive to historical information. In the selected PrNd specification, the high-state price association remains approximately three log-return percentage points after lagged economic controls. A matched industrial-production check gives similar controlled and uncontrolled estimates on its shorter sample. Local projections provide their clearest evidence for the current month, with substantially wider uncertainty about subsequent cumulative changes.
+
+The chronological investment exercise begins in 2018, with initial estimation ending in 2017 and execution delayed for the older publication convention. Adding momentum, monthly and daily MA200, sector rotation, nested market-and-trend forecasts and six-factor attribution makes the investment comparison more demanding. Some geopolitical allocations earn substantial historical profits, but consistent incremental prediction and positive factor-adjusted alpha are not established after adjustment.
+
+The archived 2022–2026 reconstruction adds a different contribution. Two revised monthly classifications remove losing REMX exposures and explain a USD 4,706 matched terminal-wealth difference. This demonstrates how a seemingly small change in a news index can materially alter a trading conclusion. Keeping product definition, timing, calibration, benchmark and data version explicit turns the evidence into testable research candidates rather than an automatic geopolitical trading rule.

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Raw adjusted prices, all 104 post-2018 decisions and all 56 archived decisions match their source values, fixed calibrations and execution calendars.",
+    "All 88 main portfolio paths match an independent loop from raw prices, derived benchmark weights, calendar cash, turnover costs, liquidation, CAGR and drawdowns.",
+    "Forecast training targets strictly precede execution; first and last predictions in both samples reproduce from independent normal-equation refits, using each archived risk history where required.",
+    "Price slopes and calendar-aware HAC errors reproduce independently, including actual IP gaps; every local-projection target matches the raw cumulative quote change on 177 common dates.",
+    "Six-factor intercepts, nested forecast error ratios and the exact two-decision wealth attribution reconcile; factor attribution includes the opening cost on its first holding interval."
+  ],
+  "runtime": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "sha256": {
+    "review_extension/raw/CHNLOLITOAASTSAM.csv": "f6340923c6bd0c717c6557b3c2c7b2478dff17a778edc05a1e85aed031a059c1",
+    "review_extension/raw/CHNPRINTO01IXPYM.csv": "8da33d3d328399b8a07f7f1dffdd125e3be190bd847639374408c2cfeb701aea",
+    "review_extension/raw/EEM_daily.json": "90492fff1cab4a0416d5e0cb8999ea1a133a46b7d152cff3c484ee55b96c6578",
+    "review_extension/raw/FF5_daily.zip": "e58577223032aa45071a46686f7068900c371b516c9eb04e28e974c34264f84f",
+    "review_extension/raw/GPR_OLD_2021_snapshot.xlsx": "bcefe100210c14263d0cccbba6abe9612d1947a0d5592d9e67e1e7df9b60acd7",
+    "review_extension/raw/IGREA.csv": "0dc7fd8c998dafddb3e54e69662b4d6f1412b4dc032b9eebf62730ecbc403465",
+    "review_extension/raw/MOM_daily.zip": "e56d5bc845544e2993e77353b12c611cfce3149ef754f9b59fc67904ddadd369",
+    "review_extension/raw/TWEXBGSMTH.csv": "52ad273fc6e2190ad63340baeaae7f8878928412700568cf3a388e0c465b3c2f",
+    "review_extension/raw/source_downloads.json": "5373115494e244b245fab9d4e0894490da58281469aeb581909df1706f6b301e",
+    "review_extension/raw/wayback_cdx_attempt.txt": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  }
+}

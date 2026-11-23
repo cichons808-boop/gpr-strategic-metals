@@ -1,0 +1,37 @@
+variable,definition,unit_or_convention
+GPR,Global geopolitical risk index,original source units
+GPRC_CHN,China-related geopolitical risk index,original source units
+GPRT,Geopolitical threats index,original source units
+GPRA,Geopolitical acts index,original source units
+PrNd,Praseodymium-neodymium mixed-metal monthly mean quote,CNY per tonne
+neodymium,Neodymium monthly quote,USD per kg
+samarium,Samarium monthly quote,USD per kg
+REE,Rare earth carbonate benchmark,IMF source units
+Lithium,Lithium metal benchmark,IMF source units
+REMX,VanEck Rare Earth and Strategic Metals ETF,adjusted USD price
+LIT,Global X Lithium and Battery Tech ETF,adjusted USD price
+COPX,Global X Copper Miners ETF,adjusted USD price
+SPY,SPDR S&P 500 ETF Trust,adjusted USD price
+EEM,iShares MSCI Emerging Markets ETF,adjusted USD price
+DFF,Effective federal funds rate,annual percent
+TWEXBGSMTH,Nominal broad US dollar index,FRED index
+IGREA,Global real economic activity index,Dallas Fed index
+CHNLOLITOAASTSAM,China amplitude-adjusted composite leading indicator,OECD index
+CHNPRINTO01IXPYM,China industrial production relative to the same month a year earlier,index previous year=100
+Mkt-RF,US market excess return,decimal in factor_daily.csv; percent in raw source
+SMB,Size factor,decimal in factor_daily.csv; percent in raw source
+HML,Value factor,decimal in factor_daily.csv; percent in raw source
+RMW,Profitability factor,decimal in factor_daily.csv; percent in raw source
+CMA,Investment factor,decimal in factor_daily.csv; percent in raw source
+Mom,Momentum factor,decimal in factor_daily.csv; percent in raw source
+RF,French source risk-free return,decimal in factor_daily.csv; percent in raw source
+return,Net portfolio return,decimal
+wealth,Portfolio value from an initial 10000,USD
+drawdown,Decline from preceding portfolio peak,decimal
+CAGR,Compound annual growth rate,decimal
+maxdd,Maximum drawdown,decimal
+cost_bps,One-way turnover cost,basis points
+exposure,Fraction invested in ETFs,0 to 1
+turnover,Absolute weight change including entry and liquidation,portfolio units
+info_month,Completed month used for a decision,calendar month
+forward_end,End date of a forecast target,execution close
